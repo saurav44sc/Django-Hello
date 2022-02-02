@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block title %} Contact {% endblock title %} 
+<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>
+{%block body %}
+<div class="container my-3">
+  <form class="text-center" method="post" action="/contact">
+    {% csrf_token %}
+    <div class="mb-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone No.</label>
+        <input type="text" id="phone" name="phone" class="form-control" />
+      </div>
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" />
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">About yourself</label>
+      <textarea rows="3" class="form-control" id="desc" name="desc"> </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}
